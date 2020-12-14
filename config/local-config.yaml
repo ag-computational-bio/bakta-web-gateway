@@ -1,0 +1,7 @@
+Config:
+    Gateway:
+        Port: 8080
+        GRPCEndpointHost: "biodatadbetl"
+        GRPCEndpointPort: 9000
+    Swagger:
+        Path: "www/swagger-ui/"
