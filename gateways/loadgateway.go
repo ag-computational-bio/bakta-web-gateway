@@ -2,9 +2,11 @@ package gateways
 
 import (
 	"log"
+	"time"
 
 	"github.com/ag-computational-bio/bakta-web-api/go/api"
 	"github.com/ag-computational-bio/bakta-web-api/go/swaggerhandler"
+	"github.com/gin-contrib/cors"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 
 	"context"
@@ -45,6 +47,16 @@ func StartETLGateway() error {
 	opts := []grpc.DialOption{grpc.WithInsecure()}
 
 	r := gin.Default()
+
+	r.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"https://restapi.bakta.ingress.rancher2.computational.bio", "localhost:*"},
+		AllowMethods:     []string{"GET", "POST", "PUT"},
+		AllowHeaders:     []string{"Origin"},
+		ExposeHeaders:    []string{"Content-Length"},
+		AllowCredentials: true,
+		MaxAge:           12 * time.Hour,
+	}))
+
 	r.Any("/api/*any", gin.WrapF(gwmux.ServeHTTP))
 
 	r.GET("/swaggerjson", func(c *gin.Context) {

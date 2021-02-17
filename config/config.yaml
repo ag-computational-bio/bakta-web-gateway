@@ -1,7 +1,7 @@
 Config:
     Gateway:
-        Port: 8080
-        LoadEndpointHost: "biodatadbetl"
-        LoadEndpointPort: 9000
+        Port: 9000
+        GRPCEndpointHost: "baktawebbackend"
+        GRPCEndpointPort: 8080
     Swagger:
         Path: "/www/swagger-ui/"
