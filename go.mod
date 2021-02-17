@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	github.com/ag-computational-bio/BioDataDBModels/go v0.1.8-alpha
-	github.com/ag-computational-bio/bakta-web-api/go v0.3.3-alpha
+	github.com/ag-computational-bio/bakta-web-api/go v0.3.3-alpha.0.20210217233522-cade1d72c670
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gin-contrib/cors v1.3.1 // indirect
 	github.com/gin-gonic/gin v1.6.3
