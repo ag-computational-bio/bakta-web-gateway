@@ -6,7 +6,6 @@ require (
 	github.com/ag-computational-bio/BioDataDBModels/go v0.1.8-alpha
 	github.com/ag-computational-bio/bakta-web-api/go v0.3.3-alpha.0.20210225093122-22d3730791fd
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
-	github.com/gin-contrib/cors v1.3.1
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-playground/validator/v10 v10.4.1 // indirect
 	github.com/gopherjs/gopherjs v0.0.0-20210202160940-bed99a852dfe // indirect
