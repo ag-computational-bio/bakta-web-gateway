@@ -50,6 +50,7 @@ func StartETLGateway() error {
 	config := cors.DefaultConfig()
 	config.AllowOrigins = []string{"https://ui.bakta.ingress.rancher2.computational.bio/", "https://restapi.bakta.ingress.rancher2.computational.bio"}
 	config.AllowCredentials = true
+	config.AddAllowHeaders("authorization")
 
 	r.Use(cors.New(config))
 
