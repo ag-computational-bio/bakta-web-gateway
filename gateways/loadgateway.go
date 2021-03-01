@@ -2,7 +2,6 @@ package gateways
 
 import (
 	"log"
-	"time"
 
 	"github.com/ag-computational-bio/bakta-web-api/go/api"
 	"github.com/ag-computational-bio/bakta-web-api/go/swaggerhandler"
@@ -48,14 +47,11 @@ func StartETLGateway() error {
 
 	r := gin.Default()
 
-	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"https://ui.bakta.ingress.rancher2.computational.bio"},
-		AllowCredentials: true,
-		AllowOriginFunc: func(origin string) bool {
-			return origin == "https://ui.bakta.ingress.rancher2.computational.bio"
-		},
-		MaxAge: 12 * time.Hour,
-	}))
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{"https://ui.bakta.ingress.rancher2.computational.bio/"}
+	config.AllowCredentials = true
+
+	r.Use(cors.New(config))
 
 	r.Any("/api/*any", gin.WrapF(gwmux.ServeHTTP))
 
