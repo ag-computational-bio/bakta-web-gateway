@@ -51,9 +51,9 @@ func StartETLGateway() error {
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"https://restapi.bakta.ingress.rancher2.computational.bio", "localhost:*"},
 		AllowMethods:     []string{"GET", "POST", "PUT"},
-		AllowHeaders:     []string{"Origin"},
-		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
+		AllowWildcard:    true,
+		AllowWebSockets:  true,
 		MaxAge:           12 * time.Hour,
 	}))
 
