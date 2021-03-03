@@ -3,16 +3,15 @@ package gateways
 import (
 	"log"
 
-	"github.com/ag-computational-bio/bakta-web-api/go/api"
-	"github.com/ag-computational-bio/bakta-web-api/go/swaggerhandler"
-	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
-
 	"context"
 	"fmt"
 	"net/http"
 	"strings"
 
+	"github.com/ag-computational-bio/bakta-web-api-go/api"
+	"github.com/ag-computational-bio/bakta-web-api-go/swaggerhandler"
 	"github.com/gin-gonic/gin"
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/spf13/viper"
 
 	"google.golang.org/grpc"
