@@ -3,7 +3,7 @@ module github.com/ag-computational-bio/bakta-web-gateway
 go 1.16
 
 require (
-	github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511164724-debd1af1ed2a
+	github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511173411-45e9dac18a65
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gin-gonic/gin v1.7.1
 	github.com/go-playground/validator/v10 v10.6.0 // indirect
