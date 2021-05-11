@@ -3,7 +3,7 @@ module github.com/ag-computational-bio/bakta-web-gateway
 go 1.16
 
 require (
-	github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210303193734-0c148f9a32b5 // indirect
+	github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511164724-debd1af1ed2a
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/gin-gonic/gin v1.7.1
 	github.com/go-playground/validator/v10 v10.6.0 // indirect
@@ -14,7 +14,7 @@ require (
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/magiconair/properties v1.8.5 // indirect
 	github.com/mitchellh/mapstructure v1.4.1 // indirect
-	github.com/pelletier/go-toml v1.9.0 // indirect
+	github.com/pelletier/go-toml v1.9.1 // indirect
 	github.com/smartystreets/assertions v1.2.0 // indirect
 	github.com/spf13/afero v1.6.0 // indirect
 	github.com/spf13/cast v1.3.1 // indirect
