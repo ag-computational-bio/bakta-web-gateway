@@ -41,6 +41,8 @@ github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511164724-debd1af1e
 github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511164724-debd1af1ed2a/go.mod h1:1OlDWCwtXP1w0oZ3pLdj7kVL+s0W47Qj45SMsAU+VZA=
 github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511173411-45e9dac18a65 h1:195AB2/iNRRMMY8flvQl5v2F+M4mHvloHedZnnpayoA=
 github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511173411-45e9dac18a65/go.mod h1:1OlDWCwtXP1w0oZ3pLdj7kVL+s0W47Qj45SMsAU+VZA=
+github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511175205-9d2dcf97ec6b h1:Ctn6hHvpoIgsoz8QzEPKZfMJkb+38aiwsHn2S4GuHhY=
+github.com/ag-computational-bio/bakta-web-api-go v0.0.0-20210511175205-9d2dcf97ec6b/go.mod h1:1OlDWCwtXP1w0oZ3pLdj7kVL+s0W47Qj45SMsAU+VZA=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
