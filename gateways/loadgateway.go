@@ -48,7 +48,10 @@ func StartGateway() error {
 
 	swagger_fs := http.FS(api.GetSwaggerEmbedded())
 	r.StaticFS("/swaggerjson", swagger_fs)
-	fs := http.FileSystem(http.Dir("www/swagger-ui/"))
+
+	swagger_files := viper.GetString("Config.Swagger.Path")
+
+	fs := http.FileSystem(http.Dir(swagger_files))
 
 	r.GET("/", func(c *gin.Context) {
 		c.Redirect(http.StatusFound, "/swagger-ui/")
