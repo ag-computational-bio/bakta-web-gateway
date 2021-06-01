@@ -31,5 +31,5 @@ func main() {
 		log.Fatalln(err.Error())
 	}
 
-	gateways.StartETLGateway()
+	gateways.StartGateway()
 }

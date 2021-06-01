@@ -30,7 +30,7 @@ func grpcHandlerFunc(grpcServer *grpc.Server, otherHandler http.Handler) http.Ha
 }
 
 // StartETLGateway Starts the gateway server for the ETL component
-func StartETLGateway() error {
+func StartGateway() error {
 	ctx := context.Background()
 	ctx, cancel := context.WithCancel(ctx)
 	defer cancel()
