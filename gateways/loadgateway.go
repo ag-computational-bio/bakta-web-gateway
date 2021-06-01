@@ -8,8 +8,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/ag-computational-bio/bakta-web-api-go/api"
-	"github.com/ag-computational-bio/bakta-web-api-go/swaggerhandler"
+	api "github.com/ag-computational-bio/bakta-web-api-go/bakta/web/api/proto/v1"
 	"github.com/gin-gonic/gin"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/spf13/viper"
@@ -47,23 +46,21 @@ func StartETLGateway() error {
 
 	r.Any("/api/*any", gin.WrapF(gwmux.ServeHTTP))
 
-	r.GET("/swaggerjson", func(c *gin.Context) {
-		c.Data(200, "application/json", swaggerhandler.SwaggerJSON)
+	swagger_fs := http.FS(api.GetSwaggerEmbedded())
+	r.StaticFS("/swaggerjson", swagger_fs)
+	fs := http.FileSystem(http.Dir("www/swagger-ui/"))
+
+	r.GET("/", func(c *gin.Context) {
+		c.Redirect(http.StatusFound, "/swagger-ui/")
 	})
+
+	r.StaticFS("/swagger-ui/", fs)
 
 	err := api.RegisterBaktaJobsHandlerFromEndpoint(ctx, gwmux, fmt.Sprintf("%v:%v", grpcEndpointHost, grpcEndpointPort), opts)
 	if err != nil {
 		log.Println(err.Error())
 		return err
 	}
-
-	swaggerDir := viper.GetString("Config.Swagger.Path")
-
-	fs := http.FileSystem(http.Dir(swaggerDir))
-	r.GET("/", func(c *gin.Context) {
-		c.Redirect(http.StatusFound, "/swagger-ui/")
-	})
-	r.StaticFS("/swagger-ui/", fs)
 
 	port := viper.GetInt("Config.Gateway.Port")
 
